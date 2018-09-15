@@ -11,65 +11,67 @@
 \alias{scale_y_seconds}
 \title{Scales for durations}
 \usage{
-scale_x_days(name = "Time", breaks = waiver(), minor_breaks = waiver(),
-  labels = waiver(), limits = NULL, expand = waiver(),
-  oob = scales::censor, na.value = NA_real_, position = "bottom",
-  time_wrap = NULL, unit = "day")
+scale_x_days(name = "Time", breaks = waiver(),
+  minor_breaks = waiver(), labels = waiver(), limits = NULL,
+  expand = waiver(), oob = scales::censor, na.value = NA_real_,
+  position = "bottom", time_wrap = NULL, unit = "day")
 
-scale_y_days(name = "Time", breaks = waiver(), minor_breaks = waiver(),
-  labels = waiver(), limits = NULL, expand = waiver(),
-  oob = scales::censor, na.value = NA_real_, position = "left",
-  time_wrap = NULL, unit = "day")
+scale_y_days(name = "Time", breaks = waiver(),
+  minor_breaks = waiver(), labels = waiver(), limits = NULL,
+  expand = waiver(), oob = scales::censor, na.value = NA_real_,
+  position = "left", time_wrap = NULL, unit = "day")
 
-scale_x_hours(name = "Time", breaks = waiver(), minor_breaks = waiver(),
-  labels = waiver(), limits = NULL, expand = waiver(),
-  oob = scales::censor, na.value = NA_real_, position = "bottom",
-  time_wrap = NULL, unit = "h")
+scale_x_hours(name = "Time", breaks = waiver(),
+  minor_breaks = waiver(), labels = waiver(), limits = NULL,
+  expand = waiver(), oob = scales::censor, na.value = NA_real_,
+  position = "bottom", time_wrap = NULL, unit = "h")
 
-scale_y_hours(name = "Time", breaks = waiver(), minor_breaks = waiver(),
-  labels = waiver(), limits = NULL, expand = waiver(),
-  oob = scales::censor, na.value = NA_real_, position = "left",
-  time_wrap = NULL, unit = "h")
+scale_y_hours(name = "Time", breaks = waiver(),
+  minor_breaks = waiver(), labels = waiver(), limits = NULL,
+  expand = waiver(), oob = scales::censor, na.value = NA_real_,
+  position = "left", time_wrap = NULL, unit = "h")
 
-scale_x_seconds(name = "Time", breaks = waiver(), minor_breaks = waiver(),
-  labels = waiver(), limits = NULL, expand = waiver(),
-  oob = scales::censor, na.value = NA_real_, position = "bottom",
-  time_wrap = NULL, unit = "s")
+scale_x_seconds(name = "Time", breaks = waiver(),
+  minor_breaks = waiver(), labels = waiver(), limits = NULL,
+  expand = waiver(), oob = scales::censor, na.value = NA_real_,
+  position = "bottom", time_wrap = NULL, unit = "s")
 
-scale_y_seconds(name = "Time", breaks = waiver(), minor_breaks = waiver(),
-  labels = waiver(), limits = NULL, expand = waiver(),
-  oob = scales::censor, na.value = NA_real_, position = "left",
-  time_wrap = NULL, unit = "s")
+scale_y_seconds(name = "Time", breaks = waiver(),
+  minor_breaks = waiver(), labels = waiver(), limits = NULL,
+  expand = waiver(), oob = scales::censor, na.value = NA_real_,
+  position = "left", time_wrap = NULL, unit = "s")
 }
 \arguments{
 \item{name}{The name of the scale. Used as axis or legend title. If
-\code{NULL}, the default, the name of the scale is taken from the first
-mapping used for that aesthetic.}
+\code{waiver()}, the default, the name of the scale is taken from the first
+mapping used for that aesthetic. If \code{NULL}, the legend title will be
+omitted.}
 
-\item{breaks}{One of: \itemize{
-  \item \code{NULL} for no breaks
-  \item \code{waiver()} for the default breaks computed by the
-    transformation object
-  \item A numeric vector of positions
-  \item A function that takes the limits as input and returns breaks
-    as output
+\item{breaks}{One of:
+\itemize{
+\item \code{NULL} for no breaks
+\item \code{waiver()} for the breaks specified by \code{date_breaks}
+\item A \code{Date}/\code{POSIXct} vector giving positions of breaks
+\item A function that takes the limits as input and returns breaks as output
 }}
 
-\item{minor_breaks}{One of: \itemize{
-  \item \code{NULL} for no minor breaks
-  \item \code{waiver()} for the default breaks (one minor break between
-    each major break)
-  \item A numeric vector of positions
-  \item A function that given the limits returns a vector of minor breaks.
+\item{minor_breaks}{One of:
+\itemize{
+\item \code{NULL} for no breaks
+\item \code{waiver()} for the breaks specified by \code{date_minor_breaks}
+\item A \code{Date}/\code{POSIXct} vector giving positions of minor breaks
+\item A function that takes the limits as input and returns minor breaks as
+output
 }}
 
-\item{labels}{One of: \itemize{
-  \item \code{NULL} for no labels
-  \item \code{waiver()} for the default labels computed by the
-    transformation object
-  \item A character vector giving labels (must be same length as \code{breaks})
-  \item A function that takes the breaks as input and returns labels
-    as output
+\item{labels}{One of:
+\itemize{
+\item \code{NULL} for no labels
+\item \code{waiver()} for the default labels computed by the
+transformation object
+\item A character vector giving labels (must be same length as \code{breaks})
+\item A function that takes the breaks as input and returns labels
+as output
 }}
 
 \item{limits}{A numeric vector of length two providing limits of the scale.

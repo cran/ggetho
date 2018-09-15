@@ -1,8 +1,8 @@
 Package: ggetho
 Title: Visualisation of High-Throughput Behavioural (i.e. Ethomics)
         Data
-Date: 2018-05-22
-Version: 0.3.2
+Date: 2018-09-13
+Version: 0.3.3
 Authors@R: c(
     person("Quentin", "Geissmann", role = c("aut", "cre"), email = "qgeissmann@gmail.com")
     )
@@ -17,10 +17,10 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/rethomics/ggetho
 BugReports: https://github.com/rethomics/ggetho/issues
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
 NeedsCompilation: no
-Packaged: 2018-05-28 09:59:26 UTC; quentin
+Packaged: 2018-09-13 18:16:34 UTC; quentin
 Author: Quentin Geissmann [aut, cre]
 Maintainer: Quentin Geissmann <qgeissmann@gmail.com>
 Repository: CRAN
-Date/Publication: 2018-05-28 11:10:08 UTC
+Date/Publication: 2018-09-15 07:10:05 UTC
