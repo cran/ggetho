@@ -1,6 +1,6 @@
 #' Prepare a ggplot object to represent periodogram data
 #'
-#' This function summarises periodogram data (containing periodogram of multiple individual),
+#' This function summarises periodogram data (containing periodograms of multiple individual),
 #' to show period on the `x` axis, and power (or equivalent) on the `y` axis.
 #'
 #' @inheritParams ggetho
@@ -33,6 +33,7 @@
 #' * [ggetho] to plot time series
 #' * [geom_peak] to draw peaks on a periodogram
 #' * [zeitgebr::periodogram] to compute periodograms in a first place
+#' * [ggspectro] to visualise spectrograms
 #' @references
 #' * The relevant [rethomic tutorial section](https://rethomics.github.io/ggetho.html#periodograms)
 #' @export
