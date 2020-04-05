@@ -28,7 +28,7 @@ ggetho(data, mapping, summary_FUN = mean,
 \item{...}{additional arguments to be passed to \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}}}
 }
 \value{
-An initial plot object that can be further edited.
+An initial ggplot object that can be further edited.
 }
 \description{
 This function summarises a variable of interest (y or z axis)

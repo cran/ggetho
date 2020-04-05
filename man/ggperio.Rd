@@ -13,6 +13,9 @@ ggperio(data, mapping = aes(x = period, y = power), ...)
 
 \item{...}{additional arguments to be passed to \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}}}
 }
+\value{
+An initial ggplot object that can be further edited.
+}
 \description{
 This function summarises periodogram data (containing periodograms of multiple individual),
 to show period on the \code{x} axis, and power (or equivalent) on the \code{y} axis.

@@ -23,6 +23,9 @@ ggspectro(data, mapping = aes(), summary_FUN = mean,
 
 \item{...}{additional arguments to be passed to \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}}}
 }
+\value{
+An initial ggplot object that can be further edited.
+}
 \description{
 This function summarises spectrogram data (containing spectrograms of multiple individual),
 to show period on the \code{y} axis, time on the \code{x} axis and power on the \code{z} axis (\emph{e.g.} as a colour).
@@ -33,7 +36,9 @@ library(zeitgebr)
 data(dams_sample)
 dt <- dams_sample
 spect_dt <- spectrogram(activity, dt)
-pl <- ggspectro(spect_dt,time_wrap = hours(24)) + stat_tile_etho() + scale_y_hours(log=T) +
+pl <- ggspectro(spect_dt,time_wrap = hours(24)) +
+  stat_tile_etho() +
+  scale_y_hours(log=TRUE) +
   stat_ld_annotations(ld_colours = c("grey","black"))
 pl + facet_grid(period_group ~ .)
 pl + facet_wrap(~ id)

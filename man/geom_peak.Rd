@@ -25,8 +25,9 @@ data. All objects will be fortified to produce a data frame. See
 \code{\link[=fortify]{fortify()}} for which variables will be created.
 
 A \code{function} will be called with a single argument,
-the plot data. The return value must be a \code{data.frame.}, and
-will be used as the layer data.}
+the plot data. The return value must be a \code{data.frame}, and
+will be used as the layer data. A \code{function} can be created
+from a \code{formula} (e.g. \code{~ head(.x, 10)}).}
 
 \item{stat}{The statistical transformation to use on the data for this
 layer, as a string.}
@@ -36,7 +37,7 @@ a call to a position adjustment function.}
 
 \item{...}{Other arguments passed on to \code{\link[=layer]{layer()}}. These are
 often aesthetics, used to set an aesthetic to a fixed value, like
-\code{color = "red"} or \code{size = 3}. They may also be parameters
+\code{colour = "red"} or \code{size = 3}. They may also be parameters
 to the paired geom/stat.}
 
 \item{na.rm}{If \code{FALSE}, the default, missing values are removed with
@@ -57,6 +58,9 @@ the default plot specification, e.g. \code{\link[=borders]{borders()}}.}
 
 \item{conversion}{function to convert values of \code{x} to a specific unit.
 The default, \code{hours}, will write x (time) in decimal hours.}
+}
+\value{
+A ggplot layer.
 }
 \description{
 This function draws points on the x-y coordinates of selected peaks and write their (y) value on the bottom of the plot.
