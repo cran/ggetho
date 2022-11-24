@@ -4,9 +4,17 @@
 \alias{ggetho}
 \title{Prepare a ggplot object to represent behavioural data}
 \usage{
-ggetho(data, mapping, summary_FUN = mean,
-  summary_time_window = mins(30), time_wrap = NULL, time_offset = 0,
-  multiplot = NULL, multiplot_period = hours(24), ...)
+ggetho(
+  data,
+  mapping,
+  summary_FUN = mean,
+  summary_time_window = mins(30),
+  time_wrap = NULL,
+  time_offset = 0,
+  multiplot = NULL,
+  multiplot_period = hours(24),
+  ...
+)
 }
 \arguments{
 \item{data}{\link[behavr:behavr]{behavr::behavr} table containing the data and metadata}
@@ -51,8 +59,8 @@ It is possible to set duration of the period, which is typically 24 h to arbitra
 \code{multiplot_period} argument.
 }
 \examples{
-# We start by making a dataset with 20 animals
-metadata <- data.table(id = sprintf("toy_experiment|\%02d", 1:20),
+# We start by making a dataset with 4 animals
+metadata <- data.table(id = sprintf("toy_experiment|\%02d", 1:4),
                    condition = c("A", "B"))
 dt <- toy_activity_data(metadata, 3)
 # We build a plot object with **nothing inside** (just the axis)
@@ -62,6 +70,7 @@ pl
 # Sometimes, the variable of interest in not on the y axis, but on z axis (colour scale).
 # When we do not provide a y axis,
 # ggetho will make an ID fo each animal and display them on separate rows
+\dontrun{
 pl <- ggetho(dt, aes(z = asleep))
 pl
 # this one is the same type, but it groups the animals by condition
@@ -70,7 +79,6 @@ pl
 # sorting with paste
 pl <- ggetho(dt, aes(z = asleep,y = paste(condition, id)))
 pl
-
 # we want to summarise (wrap) data along a circadian day:
 pl <- ggetho(dt, aes(y = asleep), time_wrap = hours(24))
 pl
@@ -82,6 +90,7 @@ pl <- ggetho(dt,
               multiplot_period = hours(24))
 pl
 # then use `+ stat_tile_etho()` , or `+ stat_bar_tile_etho()`
+}
 }
 \references{
 \itemize{

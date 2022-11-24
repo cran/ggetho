@@ -30,8 +30,8 @@
 #' @return An initial ggplot object that can be further edited.
 #'
 #' @examples
-#' # We start by making a dataset with 20 animals
-#' metadata <- data.table(id = sprintf("toy_experiment|%02d", 1:20),
+#' # We start by making a dataset with 4 animals
+#' metadata <- data.table(id = sprintf("toy_experiment|%02d", 1:4),
 #'                    condition = c("A", "B"))
 #' dt <- toy_activity_data(metadata, 3)
 #' # We build a plot object with **nothing inside** (just the axis)
@@ -41,6 +41,7 @@
 #' # Sometimes, the variable of interest in not on the y axis, but on z axis (colour scale).
 #' # When we do not provide a y axis,
 #' # ggetho will make an ID fo each animal and display them on separate rows
+#' \dontrun{
 #' pl <- ggetho(dt, aes(z = asleep))
 #' pl
 #' # this one is the same type, but it groups the animals by condition
@@ -49,7 +50,6 @@
 #' # sorting with paste
 #' pl <- ggetho(dt, aes(z = asleep,y = paste(condition, id)))
 #' pl
-#'
 #' # we want to summarise (wrap) data along a circadian day:
 #' pl <- ggetho(dt, aes(y = asleep), time_wrap = hours(24))
 #' pl
@@ -61,6 +61,7 @@
 #'               multiplot_period = hours(24))
 #' pl
 #' # then use `+ stat_tile_etho()` , or `+ stat_bar_tile_etho()`
+#' }
 #' @seealso
 #' * [stat_pop_etho] to show population trend by aggregating individuals over time
 #' * [stat_tile_etho] to show variable of interest as colour intensity

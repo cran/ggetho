@@ -19,8 +19,8 @@
 #' @return A ggplot layer.
 #' @examples
 #' library(behavr)
-#' # We start by making a to dataset with 20 animals
-#' metadata <- data.frame(id = sprintf("toy_experiment | %02d", 1:20),
+#' # We start by making a to dataset with 4 animals
+#' metadata <- data.frame(id = sprintf("toy_experiment | %02d", 1:4),
 #'                    condition = c("A", "B"))
 #' dt <- toy_activity_data(metadata, 3)
 #' # We build a plot object
